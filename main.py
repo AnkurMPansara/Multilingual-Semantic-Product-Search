@@ -19,6 +19,7 @@ EMBEDDING_PATH = "vector_embedding/product_embeddings.pkl"
 EMBEDDING_MODEL = "gemini-embedding-001"
 EMBEDDING_DIMENSIONS = 1536
 EMBEDDING_BATCH_SIZE = 10
+EMBEDDING_REQUEST_PER_MINUTE = 100
 PRODUCT_EMBEDDING_TASK_TYPE = "RETRIEVAL_DOCUMENT"
 QUERY_EMBEDDING_TASK_TYPE = "RETRIEVAL_QUERY"
 
@@ -46,7 +47,7 @@ else:
         batch_texts = [f"{product.get("title", "")} {product.get("categoryName", "")}" for product in unidexed_product_batch]
         batch_product_ids = [product.get("asin", "") for product in unidexed_product_batch]
         print(f"Embedding batch {batch_index}...")
-        batch_embeddings = embed_text(batch_texts, client, EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, PRODUCT_EMBEDDING_TASK_TYPE)
+        batch_embeddings = embed_text(batch_texts, client, EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, PRODUCT_EMBEDDING_TASK_TYPE, EMBEDDING_REQUEST_PER_MINUTE)
         for product_id, embedding in zip(batch_product_ids, batch_embeddings):
             save_embedding(product_id, embedding, EMBEDDING_PATH)
             product_embeddings[product_id] = embedding
@@ -55,7 +56,7 @@ else:
 
 # Prompt user for search query
 user_query = input("Enter your search query: ")
-embedding_result = embed_text([user_query], client, EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, QUERY_EMBEDDING_TASK_TYPE)
+embedding_result = embed_text([user_query], client, EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, QUERY_EMBEDDING_TASK_TYPE, 0)
 query_embedding = embedding_result[0]
 
 # Perform search

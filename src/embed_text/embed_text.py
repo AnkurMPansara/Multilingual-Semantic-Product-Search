@@ -1,4 +1,5 @@
 import time
+import math
 from google import genai
 from google.genai import types
 
@@ -9,6 +10,7 @@ def embed_text(
     model: str = "gemini-embedding-001",
     dimensions: int = 384,
     task_type: str = "RETRIEVAL_DOCUMENT",
+    rpm: int = 100
 ) -> list[list[float]]:
     """
     Generate an embedding vector for a single text using the Gemini API.
@@ -24,7 +26,10 @@ def embed_text(
         list of floats representing the embedding vector (first embedding returned)
     """
     # Time for rate limiting
-    EMBEDDING_RESPONSE_TIME=6000
+    if rpm != 0:
+        EMBEDDING_RESPONSE_TIME=math.ceil(6000/rpm)
+    else:
+        EMBEDDING_RESPONSE_TIME=0
     start = time.time()
     # Build config using both dimensions and task_type
     config = types.EmbedContentConfig(
