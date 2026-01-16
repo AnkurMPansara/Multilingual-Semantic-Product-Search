@@ -404,15 +404,19 @@ This measures the cosine of the angle between two vectors, ranging from -1 (oppo
 
 ## 📄 License
 
-[Specify your license here]
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## 🤝 Contributing
-
-[Add contribution guidelines if applicable]
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📧 Contact
 
-[Add contact information if applicable]
+- **Ankur Pansara**  
+  GitHub: [@AnkurMPansara](https://github.com/AnkurMPansara)  
+  Email: [ankur.at.surat@gmail.com](mailto:ankur.at.surat@gmail.com)  
+  LinkedIn: [Ankur Pansara](https://www.linkedin.com/in/ankur-pansara)  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ---
 
