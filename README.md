@@ -1,3 +1,4 @@
+<a name="readme-top"></a>
 # Multilingual Semantic Product Search
 
 A Python-based semantic search system that uses Google's Gemini embedding models to enable multilingual product search. This project allows users to search through product catalogs using natural language queries, finding products based on semantic similarity rather than exact keyword matches.
@@ -406,8 +407,6 @@ This measures the cosine of the angle between two vectors, ranging from -1 (oppo
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 📧 Contact
 
 - **Ankur Pansara**  
@@ -415,9 +414,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
   Email: [ankur.at.surat@gmail.com](mailto:ankur.at.surat@gmail.com)  
   LinkedIn: [Ankur Pansara](https://www.linkedin.com/in/ankur-pansara)  
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ---
 
 **Note**: This project uses Google's Gemini embedding models. Make sure you comply with Google's API usage terms and pricing when using this system.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
