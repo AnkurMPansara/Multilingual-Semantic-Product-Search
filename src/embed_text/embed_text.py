@@ -27,7 +27,7 @@ def embed_text(
     """
     # Time for rate limiting
     if rpm != 0:
-        EMBEDDING_RESPONSE_TIME=math.ceil(6000/rpm)
+        EMBEDDING_RESPONSE_TIME=math.ceil(len(texts)*60000/rpm)
     else:
         EMBEDDING_RESPONSE_TIME=0
     start = time.time()
